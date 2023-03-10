@@ -1,0 +1,20 @@
+{
+	"name": "TrainConductor",
+	"namespace": "KANA",
+	"version_number": "0.0.1",
+	"description": "Character Idea by @Gorvin and @ArosRising",
+	"website_url": "https://github.com/BrotatoMods",
+	"dependencies": [],
+	"extra": {
+		"godot": {
+			"authors": ["ArosRising", "Gorvin", "KANA"],
+			"compatible_game_version": ["0.8.03"],
+			"compatible_mod_loader_version": ["3.0.0"],
+			"incompatibilities": [],
+			"tags": [],
+			"config_defaults": {},
+			"description_rich": "",
+			"image": null
+		}
+	}
+}
