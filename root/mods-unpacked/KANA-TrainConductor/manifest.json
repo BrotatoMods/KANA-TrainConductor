@@ -4,15 +4,31 @@
 	"version_number": "0.0.1",
 	"description": "Character Idea by @Gorvin and @ArosRising",
 	"website_url": "https://github.com/BrotatoMods",
-	"dependencies": [],
+	"dependencies": [
+		"Darkly77-ContentLoader"
+	],
 	"extra": {
 		"godot": {
-			"authors": ["ArosRising", "Gorvin", "KANA"],
-			"compatible_game_version": ["0.8.03"],
-			"compatible_mod_loader_version": ["3.0.0"],
-			"incompatibilities": [],
-			"tags": [],
-			"config_defaults": {},
+			"authors": [
+				"Gorvin",
+				"ArosRising",
+				"KANA"
+			],
+			"compatible_game_version": [
+				"0.8.0.3"
+			],
+			"compatible_mod_loader_version": [
+				"3.0.0"
+			],
+			"incompatibilities": [
+
+			],
+			"tags": [
+
+			],
+			"config_defaults": {
+
+			},
 			"description_rich": "",
 			"image": null
 		}
