@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
-key = "group_structures"
-text_key = "effect_group_structures"
+key = "kana_turret_follow_player"
+text_key = "KANA_TURRET_FOLLOW_PLAYER"
 value = 1
 custom_key = ""
 storage_method = 0

@@ -8,6 +8,11 @@ var KANA_last_positions_length := 10
 
 
 func _physics_process(delta: float) -> void:
+	if RunData.effects["kana_turret_follow_player"]:
+		create_trailing_points()
+
+
+func create_trailing_points() -> void:
 	if KANA_last_positions.size() <= KANA_last_positions_length:
 		add_point()
 	else:
