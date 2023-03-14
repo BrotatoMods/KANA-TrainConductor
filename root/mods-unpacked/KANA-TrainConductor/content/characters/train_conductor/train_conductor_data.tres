@@ -8,11 +8,12 @@
 [ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/characters/train_conductor/train_conductor_effect_1b.tres" type="Resource" id=8]
 [ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/characters/train_conductor/train_conductor_effect_3.tres" type="Resource" id=9]
 [ext_resource path="res://items/characters/well_rounded/well_rounded_eyes_appearance.tres" type="Resource" id=10]
-[ext_resource path="res://items/characters/well_rounded/well_rounded_mouth_appearance.tres" type="Resource" id=11]
+[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/effects/effect_turret_collide_with_player.tres" type="Resource" id=11]
 [ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/characters/train_conductor/train_conductor_effect_1.tres" type="Resource" id=12]
 [ext_resource path="res://items/characters/well_rounded/well_rounded_icon.png" type="Texture" id=13]
 [ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/characters/train_conductor/train_conductor_effect_2.tres" type="Resource" id=16]
-[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/effects/effect_turrets_follow_player.tres" type="Resource" id=18]
+[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/characters/train_conductor/train_conductor_effect_4.tres" type="Resource" id=17]
+[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/effects/effect_turret_follow_player.tres" type="Resource" id=18]
 
 [resource]
 script = ExtResource( 4 )

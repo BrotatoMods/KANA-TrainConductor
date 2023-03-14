@@ -8,6 +8,7 @@ func init_effects()->Dictionary:
 func KANA_add_custom_effects(vanilla_effects: Dictionary) -> Dictionary:
 	var custom_effects := {
 		"kana_turret_follow_player": 0,
+		"kana_turret_collide_with_player": 0,
 		"kana_player_only_move": 0,
 		"kana_player_move_four_way": 0,
 	}
