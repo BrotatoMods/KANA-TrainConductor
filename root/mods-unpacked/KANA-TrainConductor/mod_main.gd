@@ -8,6 +8,9 @@ var mod_dir_path := ""
 var extensions_dir_path := ""
 var translations_dir_path := ""
 
+# --- data used by script extensions ---
+var KANA_turrets := []
+
 
 func _init(modLoader = ModLoader) -> void:
 	ModLoaderUtils.log_info("Init", TRAIN_CONDUCTOR_LOG_NAME)
