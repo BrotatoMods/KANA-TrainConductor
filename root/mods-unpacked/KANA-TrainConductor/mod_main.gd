@@ -29,6 +29,7 @@ func install_script_extensions(modLoader) -> void:
 	modLoader.install_script_extension(extensions_dir_path.plus_file("entities/units/player/player.gd"))
 	modLoader.install_script_extension(extensions_dir_path.plus_file("main.gd"))
 	modLoader.install_script_extension(extensions_dir_path.plus_file("entities/structures/turret/turret.gd"))
+	modLoader.install_script_extension(extensions_dir_path.plus_file("entities/units/movement_behaviors/player_movement_behavior.gd"))
 
 
 func add_translations(modLoader) -> void:

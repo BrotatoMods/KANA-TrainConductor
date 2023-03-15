@@ -11,9 +11,11 @@
 [ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/effects/effect_turret_collide_with_player.tres" type="Resource" id=11]
 [ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/characters/train_conductor/train_conductor_effect_1.tres" type="Resource" id=12]
 [ext_resource path="res://items/characters/well_rounded/well_rounded_icon.png" type="Texture" id=13]
+[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/effects/effect_turret_collide_with_player.tres" type="Resource" id=14]
+[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/effects/effect_kana_cant_stop_moving.tres" type="Resource" id=15]
 [ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/characters/train_conductor/train_conductor_effect_2.tres" type="Resource" id=16]
 [ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/characters/train_conductor/train_conductor_effect_4.tres" type="Resource" id=17]
-[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/effects/effect_turret_follow_player.tres" type="Resource" id=18]
+[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/effects/effect_move_four_ways.tres" type="Resource" id=18]
 
 [resource]
 script = ExtResource( 4 )
@@ -23,10 +25,10 @@ icon = ExtResource( 13 )
 name = "CHARACTER_TRAIN_CONDUCTOR"
 tier = 0
 value = 1
-effects = [ ExtResource( 18 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 9 ) ]
+effects = [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 9 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 15 ) ]
 tracking_text = ""
 max_nb = -1
-item_appearances = [ ExtResource( 10 ), ExtResource( 11 ) ]
+item_appearances = [ ExtResource( 10 ), ExtResource( 6 ), ExtResource( 7 ) ]
 tags = [  ]
 wanted_tags = [  ]
 starting_weapons = [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 1 ) ]
