@@ -12,6 +12,7 @@ var translations_dir_path := ""
 var KANA_gear_consumable = preload("res://mods-unpacked/KANA-TrainConductor/content/items/consumables/gear/gear_data.tres")
 var KANA_last_gear: Node
 var KANA_turrets := []
+var KANA_temp_items := []
 
 
 func _init(modLoader = ModLoader) -> void:

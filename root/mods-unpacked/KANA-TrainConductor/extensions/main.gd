@@ -55,7 +55,10 @@ func on_consumable_picked_up(consumable:Node) -> void:
 
 	if consumable.consumable_data.my_id == "kana_consumable_gear":
 		KANA_spawn_gear()
+		var KANA_turret_effect := load("res://items/all/turret/turret_effect_1.tres")
+		_entity_spawner.queue_to_spawn_structures.push_back([EntityType.STRUCTURE, KANA_turret_effect.scene, _player.global_position, KANA_turret_effect])
 
 
 func _KANA_on_wave_timer_timeout() -> void:
 	KANA_Train_Conductor.KANA_last_gear.queue_free()
+	RunData.KANA_clear_temp_items()
