@@ -9,6 +9,8 @@ var extensions_dir_path := ""
 var translations_dir_path := ""
 
 # --- data used by script extensions ---
+var KANA_gear_consumable = preload("res://mods-unpacked/KANA-TrainConductor/content/items/consumables/gear/gear_data.tres")
+var KANA_last_gear: Node
 var KANA_turrets := []
 
 
