@@ -9,7 +9,8 @@ func _ready() -> void:
 	_entity_spawner.connect("structure_spawned", self, "_KANA_on_structure_spawned")
 	_wave_timer.connect("timeout", self, "_KANA_on_wave_timer_timeout")
 	KANA_Train_Conductor = get_node("/root/ModLoader/KANA-TrainConductor")
-	KANA_spawn_gear()
+	if RunData.effects["kana_spawn_gear_consumable"]:
+		KANA_spawn_gear()
 
 	# Clear turret array on wave start
 	KANA_Train_Conductor.KANA_turrets.clear()
