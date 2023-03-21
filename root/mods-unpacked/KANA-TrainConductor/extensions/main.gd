@@ -48,6 +48,7 @@ func _KANA_on_last_position_updated(last_position: Vector2) -> void:
 func _KANA_on_structure_spawned(structure: Structure) -> void:
 	if structure is Turret:
 		KANA_Train_Conductor.KANA_turrets.append(structure)
+		_player.KANA_update_last_positions_length()
 
 
 func on_consumable_picked_up(consumable:Node) -> void:

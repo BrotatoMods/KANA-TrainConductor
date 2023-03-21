@@ -4,7 +4,13 @@ extends "res://entities/units/player/player.gd"
 signal KANA_last_position_updated(last_position)
 
 var KANA_last_positions := []
-var KANA_last_positions_length := 10
+var KANA_last_positions_length := 0
+
+onready var KANA_Train_Conductor := get_node("/root/ModLoader/KANA-TrainConductor")
+
+
+func _ready():
+	KANA_update_last_positions_length()
 
 
 func _physics_process(delta: float) -> void:
@@ -18,6 +24,10 @@ func create_trailing_points() -> void:
 	else:
 		KANA_last_positions.pop_front()
 		add_point()
+
+
+func KANA_update_last_positions_length():
+	KANA_last_positions_length = KANA_Train_Conductor.KANA_turrets.size() + 1
 
 
 func add_point() -> void:
