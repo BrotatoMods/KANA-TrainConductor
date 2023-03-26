@@ -14,7 +14,8 @@ func KANA_add_custom_effects(vanilla_effects: Dictionary) -> Dictionary:
 		"kana_turret_collide_with_player": 0,
 		"kana_cant_stop_moving": 0,
 		"kana_move_four_ways": 0,
-		"kana_spawn_gear_consumable": 0
+		"kana_spawn_gear_consumable": 0,
+		"kana_temp_stat_for_time_amount": []
 	}
 
 	return Utils.merge_dictionaries(vanilla_effects, custom_effects)

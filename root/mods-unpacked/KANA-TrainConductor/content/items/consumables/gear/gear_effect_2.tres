@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/effects/stat_time_span.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+key = "stat_speed"
+text_key = ""
+value = 10
+custom_key = "kana_temp_stat_for_time_amount"
+storage_method = 1
+effect_sign = 3
+custom_args = [  ]
+seconds = 5
