@@ -33,7 +33,6 @@ func install_script_extensions(modLoader) -> void:
 	modLoader.install_script_extension(extensions_dir_path.plus_file("main.gd"))
 	modLoader.install_script_extension(extensions_dir_path.plus_file("entities/structures/turret/turret.gd"))
 	modLoader.install_script_extension(extensions_dir_path.plus_file("entities/units/movement_behaviors/player_movement_behavior.gd"))
-	modLoader.install_script_extension(extensions_dir_path.plus_file("singletons/temp_stats.gd"))
 
 
 func add_translations(modLoader) -> void:
@@ -45,9 +44,22 @@ func add_translations(modLoader) -> void:
 func _ready() -> void:
 	ModLoaderUtils.log_info("Ready", TRAIN_CONDUCTOR_LOG_NAME)
 
+	# Add time span timer to the main scene
+	KANA_add_timers_to_main()
+
 	# Get the ContentLoader class
 	var ContentLoader = get_node("/root/ModLoader/Darkly77-ContentLoader/ContentLoader")
 	var content_dir = mod_dir_path.plus_file("content_data")
 
 	# Add content. These .tres files are ContentData resources
 	ContentLoader.load_data(content_dir.plus_file("TrainConductorContent.tres"), TRAIN_CONDUCTOR_LOG_NAME)
+
+
+func KANA_add_timers_to_main() -> void:
+	var main_scene = load("res://main.tscn").instance()
+	var timespan_timer = load("res://mods-unpacked/KANA-TrainConductor/custom_scenes/time_span_timer.tscn").instance()
+
+	main_scene.add_child(timespan_timer)
+	timespan_timer.set_owner(main_scene)
+
+	ModLoader.save_scene(main_scene, "res://main.tscn")
