@@ -50,14 +50,15 @@ func KANA_spawn_gear() -> void:
 
 
 func KANA_create_temp_effect_timer(key: String, value: int, seconds: int) -> void:
-	ModLoaderUtils.log_debug("Adding effect -> %s with value -> %s" % [key, value], KANA_log_name)
-	ModLoaderUtils.log_debug("Current effect value of -> %s is -> %s" % [key, str(RunData.effects[key])], KANA_log_name)
+	ModLoaderLog.debug("Adding effect -> %s with value -> %s" % [key, value], KANA_log_name)
+	ModLoaderLog.debug("Current effect value of -> %s is -> %s" % [key, str(RunData.effects[key])], KANA_log_name)
 	timespan_timer.KANA_create_temp_timer(key, value, seconds)
 
 
 func KANA_create_temp_stat_timer(key: String, value: int, seconds: int) -> void:
-	ModLoaderUtils.log_debug("Adding stat -> %s with value -> %s" % [key, value], KANA_log_name)
 	TempStats.add_stat(key, value)
+	ModLoaderLog.debug("Added stat -> %s with value -> %s" % [key, value], KANA_log_name)
+	ModLoaderLog.debug("Current stat value of -> %s is -> %s" % [key, str(TempStats.get_stat(key))], KANA_log_name)
 	var timer := get_tree().create_timer(seconds)
 	timer.connect("timeout", self, "_KANA_on_temp_stat_timer_timeout", [key, value, seconds])
 
@@ -103,11 +104,12 @@ func _KANA_on_wave_timer_timeout() -> void:
 
 func _KANA_on_temp_stat_timer_timeout(key: String, value: int, seconds: int) -> void:
 	TempStats.remove_stat(key, value)
+	ModLoaderLog.debug("Removed stat -> %s new value is -> %s" % [key, str(TempStats.get_stat(key))], KANA_log_name)
 
 
 func _KANA_on_timespan_timer_timeout(key: String, value: int, seconds: int) -> void:
 	RunData.effects[key] = RunData.effects[key] - value
-	ModLoaderUtils.log_debug("Removed effect, new value of %s is -> %s" % [key, str(RunData.effects[key])], KANA_log_name)
+	ModLoaderLog.debug("Removed effect, new value of %s is -> %s" % [key, str(RunData.effects[key])], KANA_log_name)
 
 
 func on_consumable_picked_up(consumable:Node) -> void:
@@ -127,3 +129,5 @@ func on_consumable_picked_up(consumable:Node) -> void:
 		var KANA_turret_effect := load("res://items/all/turret/turret_effect_1.tres")
 		# Spawn a turret
 		_entity_spawner.queue_to_spawn_structures.push_back([EntityType.STRUCTURE, KANA_turret_effect.scene, _player.global_position, KANA_turret_effect])
+		# Wiggle the trail for 5 sec.
+		KANA_Train_Conductor.KANA_activate_boost()
