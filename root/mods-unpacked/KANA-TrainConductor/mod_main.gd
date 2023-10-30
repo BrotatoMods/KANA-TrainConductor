@@ -15,34 +15,34 @@ var KANA_turrets := []
 var KANA_temp_items := []
 
 
-func _init(modLoader = ModLoader) -> void:
-	ModLoaderUtils.log_info("Init", TRAIN_CONDUCTOR_LOG_NAME)
-	mod_dir_path = modLoader.UNPACKED_DIR.plus_file(TRAIN_CONDUCTOR_MOD_DIR)
+func _init() -> void:
+	ModLoaderLog.info("Init", TRAIN_CONDUCTOR_LOG_NAME)
+	mod_dir_path = ModLoaderMod.get_unpacked_dir().plus_file(TRAIN_CONDUCTOR_MOD_DIR)
 
 	# Add extensions
-	install_script_extensions(modLoader)
+	install_script_extensions()
 
 	# Add translations
-	add_translations(modLoader)
+	add_translations()
 
 
-func install_script_extensions(modLoader) -> void:
+func install_script_extensions() -> void:
 	extensions_dir_path = mod_dir_path.plus_file("extensions")
-	modLoader.install_script_extension(extensions_dir_path.plus_file("singletons/run_data.gd"))
-	modLoader.install_script_extension(extensions_dir_path.plus_file("entities/units/player/player.gd"))
-	modLoader.install_script_extension(extensions_dir_path.plus_file("main.gd"))
-	modLoader.install_script_extension(extensions_dir_path.plus_file("entities/structures/turret/turret.gd"))
-	modLoader.install_script_extension(extensions_dir_path.plus_file("entities/units/movement_behaviors/player_movement_behavior.gd"))
+	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("singletons/run_data.gd"))
+	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("entities/units/player/player.gd"))
+	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("main.gd"))
+	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("entities/structures/turret/turret.gd"))
+	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("entities/units/movement_behaviors/player_movement_behavior.gd"))
 
 
-func add_translations(modLoader) -> void:
+func add_translations() -> void:
 	translations_dir_path = mod_dir_path.plus_file("translations")
-	modLoader.add_translation_from_resource(translations_dir_path.plus_file("translation.de.translation"))
-	modLoader.add_translation_from_resource(translations_dir_path.plus_file("translation.en.translation"))
+	ModLoaderMod.add_translation(translations_dir_path.plus_file("translation.de.translation"))
+	ModLoaderMod.add_translation(translations_dir_path.plus_file("translation.en.translation"))
 
 
 func _ready() -> void:
-	ModLoaderUtils.log_info("Ready", TRAIN_CONDUCTOR_LOG_NAME)
+	ModLoaderLog.info("Ready", TRAIN_CONDUCTOR_LOG_NAME)
 
 	# Add time span timer to the main scene
 	KANA_add_timers_to_main()
@@ -62,4 +62,4 @@ func KANA_add_timers_to_main() -> void:
 	main_scene.add_child(timespan_timer)
 	timespan_timer.set_owner(main_scene)
 
-	ModLoader.save_scene(main_scene, "res://main.tscn")
+	ModLoaderMod.save_scene(main_scene, "res://main.tscn")
