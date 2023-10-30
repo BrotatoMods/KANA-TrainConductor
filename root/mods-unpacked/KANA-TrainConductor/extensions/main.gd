@@ -88,8 +88,9 @@ func on_consumable_picked_up(consumable:Node) -> void:
 
 
 func _KANA_on_wave_timer_timeout() -> void:
-	KANA_Train_Conductor.KANA_last_gear.queue_free()
-	RunData.KANA_clear_temp_items()
+	if KANA_Train_Conductor.KANA_last_gear:
+		KANA_Train_Conductor.KANA_last_gear.queue_free()
+		RunData.KANA_clear_temp_items()
 
 
 func _KANA_on_temp_stat_timer_timeout(key: String, value: int, seconds: int) -> void:
