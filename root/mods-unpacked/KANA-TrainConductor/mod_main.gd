@@ -13,6 +13,10 @@ var KANA_gear_consumable = preload("res://mods-unpacked/KANA-TrainConductor/cont
 var KANA_last_gear: Node
 var KANA_turrets := []
 var KANA_temp_items := []
+var KANA_draw_debug_point := true
+var KANA_debug_points: Node
+var KANA_debug_point := preload("res://mods-unpacked/KANA-TrainConductor/custom_scenes/debug_point.tscn")
+var has_teleported := false
 
 
 func _init() -> void:

@@ -2,6 +2,7 @@ extends "res://entities/units/player/player.gd"
 
 
 signal KANA_last_position_updated(last_position)
+signal KANA_player_border_collided(collider)
 
 var KANA_last_positions := []
 var KANA_last_positions_length := 0
@@ -14,6 +15,10 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
+	var collision := get_last_slide_collision()
+	if collision and collision.collider is MyTileMapLimits:
+		emit_signal("KANA_player_border_collided", collision)
+
 	if RunData.effects["kana_turret_follow_player"]:
 		create_trailing_points()
 
@@ -35,7 +40,7 @@ func add_point() -> void:
 
 	# If there are no points yet just add the point and return
 	if KANA_last_positions_size == 0:
-		KANA_last_positions.append(global_position)
+		KANA_last_positions.push_back(global_position)
 		return
 
 	var distance := global_position.distance_to(KANA_last_positions[KANA_last_positions_size - 1])
@@ -43,5 +48,5 @@ func add_point() -> void:
 	if distance < 50:
 		return
 
-	KANA_last_positions.append(global_position)
+	KANA_last_positions.push_back(global_position)
 	emit_signal("KANA_last_position_updated", global_position)
