@@ -9,7 +9,6 @@ onready var timespan_timer := $TimeSpanTimer
 
 func _ready() -> void:
 	_player.connect("KANA_last_position_updated", self, "_KANA_on_last_position_updated")
-	_player.connect("KANA_player_border_collided", self, "_KANA_on_player_border_collided")
 	_entity_spawner.connect("structure_spawned", self, "_KANA_on_structure_spawned")
 	_wave_timer.connect("timeout", self, "_KANA_on_wave_timer_timeout")
 	KANA_Train_Conductor = get_node("/root/ModLoader/KANA-TrainConductor")
@@ -74,35 +73,6 @@ func KANA_draw_debug_points() -> void:
 		var new_debug_point : Node2D = KANA_Train_Conductor.KANA_debug_point.instance()
 		KANA_Train_Conductor.KANA_debug_points.add_child(new_debug_point)
 		new_debug_point.global_position = position
-
-
-func KANA_get_opposite_collision_tile_position(tile_position: Vector2, direction: Vector2) -> Vector2:
-	var current_zone = ZoneService.get_zone_data(RunData.current_zone).duplicate()
-	var opposite_tile_position: Vector2
-	var spawn_offset = 2
-
-	if direction == Vector2(1, 0):
-		opposite_tile_position = Vector2(current_zone.width - spawn_offset, tile_position.y)
-	elif direction == Vector2(-1, 0):
-		opposite_tile_position = Vector2(spawn_offset, tile_position.y)
-	elif direction == Vector2(0, 1):
-		opposite_tile_position = Vector2(tile_position.x, current_zone.height - spawn_offset)
-	elif direction == Vector2(0, -1):
-		opposite_tile_position = Vector2(tile_position.x, spawn_offset)
-
-	var local_position: Vector2 = _tile_map_limits.map_to_world(opposite_tile_position)
-	var global_position: Vector2 = _tile_map_limits.to_global(local_position)
-
-	return global_position
-
-
-func _KANA_on_player_border_collided(collision: KinematicCollision2D) -> void:
-	var tile_position_player: Vector2 = collision.collider.world_to_map(_player.position)
-	var tile_position_collider: Vector2 = tile_position_player - collision.normal
-
-	var opposite_position := KANA_get_opposite_collision_tile_position(tile_position_collider, collision.normal)
-
-	_player.global_position = opposite_position
 
 
 func _KANA_on_last_position_updated(last_position: Vector2) -> void:
