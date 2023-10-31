@@ -16,7 +16,7 @@ func _ready():
 
 func KANA_tween_global_position(to: Vector2):
 	# If the distance to `to` is this heigh the character propably did port
-	if global_position.distance_squared_to(to) > 100000 and not KANA_just_spawned:
+	if global_position.distance_squared_to(to) > 300000 and not KANA_just_spawned:
 		global_position = to
 	else:
 		KANA_tween.interpolate_property(self, "global_position", global_position, to, 0.25, Tween.TRANS_LINEAR, Tween.EASE_OUT)
