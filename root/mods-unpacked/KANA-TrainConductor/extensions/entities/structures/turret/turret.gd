@@ -1,7 +1,7 @@
 extends "res://entities/structures/turret/turret.gd"
 
 
-var KANA_tween : Tween
+var KANA_tween: Tween
 var KANA_just_spawned := true
 
 

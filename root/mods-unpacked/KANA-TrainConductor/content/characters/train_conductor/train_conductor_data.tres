@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=21 format=2]
+[gd_resource type="Resource" load_steps=22 format=2]
 
 [ext_resource path="res://weapons/melee/wrench/4/wrench_4_data.tres" type="Resource" id=1]
 [ext_resource path="res://weapons/melee/wrench/3/wrench_3_data.tres" type="Resource" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/effects/effect_move_four_ways.tres" type="Resource" id=18]
 [ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/effects/effect_kana_cant_stop_moving.tres" type="Resource" id=19]
 [ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/characters/train_conductor/train_conductor_effect_6.tres" type="Resource" id=20]
+[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/characters/train_conductor/train_conductor_effect_7.tres" type="Resource" id=21]
 
 [resource]
 script = ExtResource( 4 )
@@ -29,7 +30,7 @@ icon = ExtResource( 13 )
 name = "CHARACTER_TRAIN_CONDUCTOR"
 tier = 0
 value = 1
-effects = [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 9 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 15 ), ExtResource( 20 ) ]
+effects = [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 9 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 21 ) ]
 tracking_text = ""
 max_nb = -1
 item_appearances = [ ExtResource( 10 ), ExtResource( 6 ), ExtResource( 7 ) ]
