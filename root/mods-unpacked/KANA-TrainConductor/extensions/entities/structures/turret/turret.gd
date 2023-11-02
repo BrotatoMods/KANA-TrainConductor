@@ -4,6 +4,9 @@ extends "res://entities/structures/turret/turret.gd"
 var KANA_tween: Tween
 var KANA_just_spawned := true
 var KANA_movement_direction: Vector2
+var KANA_turret_particles: Node
+
+onready var KANA_Train_Conductor = get_node("/root/ModLoader/KANA-TrainConductor")
 
 
 func _ready():
@@ -18,6 +21,12 @@ func _ready():
 
 func KANA_tween_global_position(to: Vector2):
 	KANA_movement_direction = global_position.direction_to(to)
+
+	if KANA_Train_Conductor.is_boost_active and KANA_turret_particles.air_particles_visually_hidden:
+		KANA_turret_particles.show_air_particles()
+	if not KANA_Train_Conductor.is_boost_active and not KANA_turret_particles.air_particles_visually_hidden:
+			KANA_turret_particles.hide_air_particles()
+
 	# If the distance to `to` is this heigh the character propably did port
 	if global_position.distance_squared_to(to) > 300000 and not KANA_just_spawned:
 		global_position = to
@@ -36,14 +45,14 @@ func KANA_setup_collision():
 
 func KANA_add_walking_turret() -> void:
 	var turret_legs: Node = preload("res://mods-unpacked/KANA-TrainConductor/custom_scenes/Turret_legs.tscn").instance()
-	var turret_particles: Node = preload("res://mods-unpacked/KANA-TrainConductor/custom_scenes/Turret_particles.tscn").instance()
+	KANA_turret_particles = preload("res://mods-unpacked/KANA-TrainConductor/custom_scenes/Turret_particles.tscn").instance()
 	var turret_walking_animation: Resource = preload("res://mods-unpacked/KANA-TrainConductor/custom_resources/move.tres")
 	var turret_death_animation: Resource = preload("res://mods-unpacked/KANA-TrainConductor/custom_resources/death.tres")
 	var turret_walking_sprite: Resource = preload("res://mods-unpacked/KANA-TrainConductor/custom_resources/turret_moving-bodies/turret.png")
 
 	# Add particles
-	.add_child(turret_particles)
-	.move_child(turret_particles, 0)
+	.add_child(KANA_turret_particles)
+	.move_child(KANA_turret_particles, 0)
 
 	# Override the base sprite
 	var texure_path: String = sprite.texture.resource_path
