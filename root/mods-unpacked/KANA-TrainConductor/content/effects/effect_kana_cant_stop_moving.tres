@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
-key = "kana_cant_stop_moving"
-text_key = "KANA_CANT_STOP_MOVING"
+key = "kana_bfx_cant_stop_moving"
+text_key = "KANA_BFX_CANT_STOP_MOVING"
 value = 1
 custom_key = ""
 storage_method = 0

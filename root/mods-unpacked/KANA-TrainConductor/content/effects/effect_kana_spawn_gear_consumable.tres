@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
-key = "kana_spawn_gear_consumable"
-text_key = "KANA_SPAWN_GEAR_CONSUMABLE"
+key = "kana_bfx_spawn_gear_consumable"
+text_key = "KANA_BFX_SPAWN_GEAR_CONSUMABLE"
 value = 1
 custom_key = ""
 storage_method = 0
