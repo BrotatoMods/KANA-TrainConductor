@@ -57,9 +57,6 @@ func _ready() -> void:
 	add_child(boost_timer)
 	boost_timer.connect("timeout", self, "_on_boost_timer_timeout")
 
-	# Add time span timer to the main scene
-	KANA_add_timers_to_main()
-
 	# Get the ContentLoader class
 	var ContentLoader = get_node("/root/ModLoader/Darkly77-ContentLoader/ContentLoader")
 	var content_dir = mod_dir_path.plus_file("content_data")
@@ -67,20 +64,8 @@ func _ready() -> void:
 	# Add content. These .tres files are ContentData resources
 	ContentLoader.load_data(content_dir.plus_file("TrainConductorContent.tres"), TRAIN_CONDUCTOR_LOG_NAME)
 
-
 	KANA_sfx_player = KANA_sfx.instance()
 	add_child(KANA_sfx_player)
-
-
-# TODO: Move this into the main.gd extension to prevent the material UI to shift.
-func KANA_add_timers_to_main() -> void:
-	var main_scene = load("res://main.tscn").instance()
-	var timespan_timer = load("res://mods-unpacked/KANA-TrainConductor/custom_scenes/time_span_timer.tscn").instance()
-
-	main_scene.add_child(timespan_timer)
-	timespan_timer.set_owner(main_scene)
-
-	ModLoaderMod.save_scene(main_scene, "res://main.tscn")
 
 
 func KANA_activate_boost() -> void:

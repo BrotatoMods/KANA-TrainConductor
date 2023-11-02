@@ -3,19 +3,20 @@ extends "res://main.gd"
 
 var KANA_log_name := "KANA-TrainConductor"
 var KANA_Train_Conductor: Node
-
-onready var timespan_timer := $TimeSpanTimer
+var KANA_timespan_timer : Node
 
 
 func _ready() -> void:
-	_player.connect("KANA_last_position_updated", self, "_KANA_on_last_position_updated")
-	_entity_spawner.connect("structure_spawned", self, "_KANA_on_structure_spawned")
-	_wave_timer.connect("timeout", self, "_KANA_on_wave_timer_timeout")
 	KANA_Train_Conductor = get_node("/root/ModLoader/KANA-TrainConductor")
+	KANA_add_timers_to_main()
+
 	if RunData.effects["kana_spawn_gear_consumable"]:
 		KANA_spawn_gear()
 
-	timespan_timer.connect("timeout", self, "_KANA_on_timespan_timer_timeout")
+	_player.connect("KANA_last_position_updated", self, "_KANA_on_last_position_updated")
+	_entity_spawner.connect("structure_spawned", self, "_KANA_on_structure_spawned")
+	_wave_timer.connect("timeout", self, "_KANA_on_wave_timer_timeout")
+	KANA_timespan_timer.connect("timeout", self, "_KANA_on_timespan_timer_timeout")
 
 	# Clear turret array on wave start
 	KANA_Train_Conductor.KANA_turrets.clear()
@@ -52,7 +53,7 @@ func KANA_spawn_gear() -> void:
 func KANA_create_temp_effect_timer(key: String, value: int, seconds: int) -> void:
 	ModLoaderLog.debug("Adding effect -> %s with value -> %s" % [key, value], KANA_log_name)
 	ModLoaderLog.debug("Current effect value of -> %s is -> %s" % [key, str(RunData.effects[key])], KANA_log_name)
-	timespan_timer.KANA_create_temp_timer(key, value, seconds)
+	KANA_timespan_timer.KANA_create_temp_timer(key, value, seconds)
 
 
 func KANA_create_temp_stat_timer(key: String, value: int, seconds: int) -> void:
@@ -74,6 +75,10 @@ func KANA_draw_debug_points() -> void:
 		var new_debug_point : Node2D = KANA_Train_Conductor.KANA_debug_point.instance()
 		KANA_Train_Conductor.KANA_debug_points.add_child(new_debug_point)
 		new_debug_point.global_position = position
+
+func KANA_add_timers_to_main() -> void:
+	KANA_timespan_timer = preload("res://mods-unpacked/KANA-TrainConductor/custom_scenes/time_span_timer.tscn").instance()
+	.add_child(KANA_timespan_timer)
 
 
 func _KANA_on_last_position_updated(last_position: Vector2) -> void:
