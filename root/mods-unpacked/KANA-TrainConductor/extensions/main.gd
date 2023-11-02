@@ -124,6 +124,7 @@ func on_consumable_picked_up(consumable:Node) -> void:
 		KANA_create_temp_stat_timer(temp_stat[0], temp_stat[1], temp_stat[2])
 
 	if consumable.consumable_data.my_id == "kana_consumable_gear":
+		KANA_Train_Conductor.play_sfx()
 		# Spawn a new gear
 		KANA_spawn_gear()
 		var KANA_turret_effect := load("res://items/all/turret/turret_effect_1.tres")

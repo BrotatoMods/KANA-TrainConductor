@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/whistle.ogg-055a7f6a90f8ad33ed268857f3e1a4fa.oggstr"
+
+[deps]
+
+source_file="res://mods-unpacked/KANA-TrainConductor/custom_resources/whistle.ogg"
+dest_files=[ "res://.import/whistle.ogg-055a7f6a90f8ad33ed268857f3e1a4fa.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

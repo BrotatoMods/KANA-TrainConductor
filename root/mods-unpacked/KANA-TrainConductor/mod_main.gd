@@ -9,6 +9,8 @@ var extensions_dir_path := ""
 var translations_dir_path := ""
 
 # --- data used by script extensions ---
+var KANA_sfx: PackedScene = preload("res://mods-unpacked/KANA-TrainConductor/custom_scenes/sfx.tscn")
+var KANA_sfx_player: AudioStreamPlayer
 var KANA_gear_consumable = preload("res://mods-unpacked/KANA-TrainConductor/content/items/consumables/gear/gear_data.tres")
 var KANA_last_gear: Node
 var KANA_turrets := []
@@ -66,6 +68,10 @@ func _ready() -> void:
 	ContentLoader.load_data(content_dir.plus_file("TrainConductorContent.tres"), TRAIN_CONDUCTOR_LOG_NAME)
 
 
+	KANA_sfx_player = KANA_sfx.instance()
+	add_child(KANA_sfx_player)
+
+
 # TODO: Move this into the main.gd extension to prevent the material UI to shift.
 func KANA_add_timers_to_main() -> void:
 	var main_scene = load("res://main.tscn").instance()
@@ -85,6 +91,12 @@ func KANA_activate_boost() -> void:
 			boost_timer.start(5)
 		else:
 			boost_timer.time_left = 5.0
+
+
+func play_sfx() -> void:
+	if not KANA_sfx_player.playing and not is_boost_active:
+		KANA_sfx_player.pitch_scale = rand_range(0.9, 1.1)
+		KANA_sfx_player.play()
 
 
 func _on_boost_timer_timeout() -> void:

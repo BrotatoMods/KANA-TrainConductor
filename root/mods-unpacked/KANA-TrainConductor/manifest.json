@@ -1,7 +1,7 @@
 {
 	"name": "TrainConductor",
 	"namespace": "KANA",
-	"version_number": "0.0.1",
+	"version_number": "0.1.0",
 	"description": "Character Idea by @Gorvin and @ArosRising",
 	"website_url": "https://github.com/BrotatoMods",
 	"dependencies": [
