@@ -7,9 +7,8 @@ var KANA_movement_direction: Vector2
 
 
 func _ready():
-	KANA_add_walking_turret()
-
 	if RunData.effects["kana_turret_follow_player"]:
+		KANA_add_walking_turret()
 		KANA_tween = Tween.new()
 		add_child(KANA_tween)
 
