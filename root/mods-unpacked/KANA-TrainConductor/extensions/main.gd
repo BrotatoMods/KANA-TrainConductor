@@ -151,3 +151,5 @@ func on_consumable_picked_up(consumable:Node) -> void:
 		_entity_spawner.queue_to_spawn_structures.push_back([EntityType.STRUCTURE, KANA_turret_effect.scene, _player.global_position, KANA_turret_effect])
 		# Wiggle the trail for 5 sec.
 		KANA_Train_Conductor.KANA_activate_boost()
+		# Increase the gears collected counter
+		RunData.tracked_item_effects["character_train_conductor"] += 1

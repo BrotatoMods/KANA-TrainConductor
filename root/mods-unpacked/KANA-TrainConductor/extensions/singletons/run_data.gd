@@ -8,6 +8,17 @@ func init_effects()->Dictionary:
 	return KANA_add_custom_effects(.init_effects())
 
 
+func init_tracked_effects() -> Dictionary:
+	var vanilla = .init_tracked_effects()
+	var custom_tracker = {
+		"character_train_conductor": 0,
+	}
+
+	vanilla.merge(custom_tracker)
+
+	return vanilla
+
+
 func KANA_add_custom_effects(vanilla_effects: Dictionary) -> Dictionary:
 	var custom_effects := {
 		"kana_turret_follow_player": 0,
