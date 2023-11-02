@@ -76,6 +76,20 @@ func KANA_draw_debug_points() -> void:
 		KANA_Train_Conductor.KANA_debug_points.add_child(new_debug_point)
 		new_debug_point.global_position = position
 
+
+func init_camera() -> void:
+	.init_camera()
+
+	if RunData.current_character.my_id == "character_train_conductor":
+		_camera.zoom = Vector2(1.6, 1.6)
+		_camera.center_vertical = true
+		_camera.center_horizontal = true
+		# _camera.limit_right = max_pos.x + EDGE_SIZE
+		# I could take some time to figure out how to calculate this,
+		# but the camera is fixed anyway, so I can also just keep the hardcoded number here that centers it. ¯\_ツ)_/¯
+		_camera.limit_right = 2570
+
+
 func KANA_add_timers_to_main() -> void:
 	KANA_timespan_timer = preload("res://mods-unpacked/KANA-TrainConductor/custom_scenes/time_span_timer.tscn").instance()
 	.add_child(KANA_timespan_timer)
