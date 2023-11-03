@@ -2,10 +2,8 @@ extends "res://main.gd"
 
 
 var KANA_log_name := "KANA-TrainConductor"
-var KANA_timespan_timer : Node
 
 onready var KANA_Train_Conductor = get_node("/root/ModLoader/KANA-TrainConductor")
-
 
 func init_camera() -> void:
 	.init_camera()
@@ -24,6 +22,13 @@ func on_consumable_picked_up(consumable:Node) -> void:
 	.on_consumable_picked_up(consumable)
 
 	if consumable.consumable_data.my_id == "kana_consumable_gear":
-		KANA_Train_Conductor.play_sfx()
-		# Increase the gears collected counter
-		RunData.tracked_item_effects["character_train_conductor"] += 1
+		KANA_handle_gear_collected()
+
+
+func KANA_handle_gear_collected() -> void:
+	var KANA_bfx := get_node("/root/ModLoader/KANA-BFX")
+
+	KANA_Train_Conductor.play_sfx()
+	KANA_bfx.KANA_activate_walking_turret_boost(5)
+	# Increase the gears collected counter
+	RunData.tracked_item_effects["character_train_conductor"] += 1

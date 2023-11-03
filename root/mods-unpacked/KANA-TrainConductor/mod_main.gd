@@ -11,16 +11,8 @@ var translations_dir_path := ""
 # --- data used by script extensions ---
 var KANA_sfx: PackedScene = preload("res://mods-unpacked/KANA-TrainConductor/custom_scenes/sfx.tscn")
 var KANA_sfx_player: AudioStreamPlayer
-var KANA_gear_consumable = preload("res://mods-unpacked/KANA-TrainConductor/content/items/consumables/gear/gear_data.tres")
-var KANA_last_gear: Node
-var KANA_turrets := []
-var KANA_temp_items := []
-var KANA_draw_debug_point := false
-var KANA_debug_points: Node
-var KANA_debug_point := preload("res://mods-unpacked/KANA-TrainConductor/custom_scenes/debug_point.tscn")
-var has_teleported := false
-var is_boost_active := false
-var boost_timer: Timer
+
+onready var KANA_bfx := get_node("/root/ModLoader/KANA-BFX")
 
 
 func _init() -> void:
@@ -52,11 +44,6 @@ func add_translations() -> void:
 func _ready() -> void:
 	ModLoaderLog.info("Ready", TRAIN_CONDUCTOR_LOG_NAME)
 
-	boost_timer = Timer.new()
-	boost_timer.one_shot = true
-	add_child(boost_timer)
-	boost_timer.connect("timeout", self, "_on_boost_timer_timeout")
-
 	# Get the ContentLoader class
 	var ContentLoader = get_node("/root/ModLoader/Darkly77-ContentLoader/ContentLoader")
 	var content_dir = mod_dir_path.plus_file("content_data")
@@ -68,21 +55,7 @@ func _ready() -> void:
 	add_child(KANA_sfx_player)
 
 
-func KANA_activate_boost() -> void:
-	if not is_boost_active:
-		is_boost_active = true
-
-		if boost_timer.is_stopped():
-			boost_timer.start(5)
-		else:
-			boost_timer.time_left = 5.0
-
-
 func play_sfx() -> void:
-	if not KANA_sfx_player.playing and not is_boost_active:
+	if not KANA_sfx_player.playing and not KANA_bfx.state.walking_turrets.boost_active:
 		KANA_sfx_player.pitch_scale = rand_range(0.9, 1.1)
 		KANA_sfx_player.play()
-
-
-func _on_boost_timer_timeout() -> void:
-	is_boost_active = false

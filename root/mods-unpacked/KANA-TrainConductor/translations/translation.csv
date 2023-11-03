@@ -1,2 +1,4 @@
 keys,en,de
-CHARACTER_TRAIN_CONDUCTOR,Train Conductor,Schaffner
+CHARACTER_TRAIN_CONDUCTOR,Train Conductor,Lokführer
+KANA_CONSUMABLE_GEAR_COLLECTED_COUNT,Gears collected: {0},Zahnräder gesammelt: {0}
+KANA_CONSUMABLE_GEAR,Gear,Zahnrad
