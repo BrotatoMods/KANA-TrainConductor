@@ -1,17 +1,19 @@
-[gd_resource type="Resource" load_steps=4 format=2]
+[gd_resource type="Resource" load_steps=6 format=2]
 
 [ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/characters/train_conductor/train_conductor_data.tres" type="Resource" id=1]
 [ext_resource path="res://mods-unpacked/Darkly77-ContentLoader/content_data.gd" type="Script" id=2]
 [ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/items/consumables/gear/gear_data.tres" type="Resource" id=3]
+[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/challenges/train_conductor_data.tres" type="Resource" id=4]
+[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/items/all/train_conductor_hat/train_conductor_hat_data.tres" type="Resource" id=5]
 
 [resource]
 script = ExtResource( 2 )
 characters = [ ExtResource( 1 ) ]
-items = [  ]
+items = [ ExtResource( 5 ) ]
 weapons = [  ]
 weapons_characters = [  ]
 sets = [  ]
-challenges = [  ]
+challenges = [ ExtResource( 4 ) ]
 upgrades = [  ]
 consumables = [ ExtResource( 3 ) ]
 elites = [  ]

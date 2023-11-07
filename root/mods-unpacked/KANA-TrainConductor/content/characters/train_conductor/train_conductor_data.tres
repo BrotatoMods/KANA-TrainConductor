@@ -36,5 +36,5 @@ tracking_text = "KANA_CONSUMABLE_GEAR_COLLECTED_COUNT"
 max_nb = -1
 item_appearances = [ ExtResource( 10 ), ExtResource( 6 ), ExtResource( 7 ) ]
 tags = [  ]
-wanted_tags = [  ]
+wanted_tags = [ "stat_engineering" ]
 starting_weapons = [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 19 ), ExtResource( 22 ), ExtResource( 5 ), ExtResource( 1 ) ]
