@@ -29,10 +29,7 @@ func _init(modloader = ModLoader) -> void:
 func install_script_extensions() -> void:
 	extensions_dir_path = mod_dir_path.plus_file("extensions")
 	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("singletons/run_data.gd"))
-	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("entities/units/player/player.gd"))
 	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("main.gd"))
-	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("entities/structures/turret/turret.gd"))
-	ModLoaderMod.install_script_extension(extensions_dir_path.plus_file("entities/units/movement_behaviors/player_movement_behavior.gd"))
 
 
 func add_translations() -> void:
