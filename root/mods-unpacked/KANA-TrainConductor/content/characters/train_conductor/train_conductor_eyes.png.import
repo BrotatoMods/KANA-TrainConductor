@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/train_conductor_eyes.png-954f066a0e3082a0644edce4c43885b7.stex"
+path="res://.import/train_conductor_eyes.png-70b3ee7d0a4904a95bd8c43f7ffd6600.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods-unpacked/KANA-TrainConductor/content/characters/train_conductor/train_conductor_eyes.png"
-dest_files=[ "res://.import/train_conductor_eyes.png-954f066a0e3082a0644edce4c43885b7.stex" ]
+source_file="res://mods-unpacked/KANA-Pototo/KANA-TrainConductor/content/characters/train_conductor/train_conductor_eyes.png"
+dest_files=[ "res://.import/train_conductor_eyes.png-70b3ee7d0a4904a95bd8c43f7ffd6600.stex" ]
 
 [params]
 

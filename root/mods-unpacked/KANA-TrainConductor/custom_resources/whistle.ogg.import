@@ -2,12 +2,12 @@
 
 importer="ogg_vorbis"
 type="AudioStreamOGGVorbis"
-path="res://.import/whistle.ogg-055a7f6a90f8ad33ed268857f3e1a4fa.oggstr"
+path="res://.import/whistle.ogg-f1f2ee14a8f40fcd92b402ecf14d0389.oggstr"
 
 [deps]
 
-source_file="res://mods-unpacked/KANA-TrainConductor/custom_resources/whistle.ogg"
-dest_files=[ "res://.import/whistle.ogg-055a7f6a90f8ad33ed268857f3e1a4fa.oggstr" ]
+source_file="res://mods-unpacked/KANA-Pototo/KANA-TrainConductor/custom_resources/whistle.ogg"
+dest_files=[ "res://.import/whistle.ogg-f1f2ee14a8f40fcd92b402ecf14d0389.oggstr" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/coin_bag_ring_gemstone_item_02.wav-dc76818cd7bbc1836eff7fb332bf0b31.sample"
+path="res://.import/coin_bag_ring_gemstone_item_02.wav-36ceeafaa9ca284f10a8fb2e870812a2.sample"
 
 [deps]
 
-source_file="res://mods-unpacked/KANA-TrainConductor/content/items/consumables/gear/coin_bag_ring_gemstone_item_02.wav"
-dest_files=[ "res://.import/coin_bag_ring_gemstone_item_02.wav-dc76818cd7bbc1836eff7fb332bf0b31.sample" ]
+source_file="res://mods-unpacked/KANA-Pototo/KANA-TrainConductor/content/items/consumables/gear/coin_bag_ring_gemstone_item_02.wav"
+dest_files=[ "res://.import/coin_bag_ring_gemstone_item_02.wav-36ceeafaa9ca284f10a8fb2e870812a2.sample" ]
 
 [params]
 

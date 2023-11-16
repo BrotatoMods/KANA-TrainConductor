@@ -1,30 +1,30 @@
 [gd_resource type="Resource" load_steps=12 format=2]
 
-[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/items/consumables/gear/coin_bag_ring_gemstone_item_04.wav" type="AudioStream" id=1]
-[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/items/consumables/gear/gear.png" type="Texture" id=2]
-[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/items/consumables/gear/coin_bag_ring_gemstone_item_03.wav" type="AudioStream" id=3]
-[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/items/consumables/gear/coin_bag_ring_gemstone_item_02.wav" type="AudioStream" id=4]
-[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/items/consumables/gear/kana_consumable_gear.tscn" type="PackedScene" id=5]
-[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/items/consumables/gear/gear_effect_1.tres" type="Resource" id=6]
-[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/items/consumables/gear/gear_effect_3.tres" type="Resource" id=7]
-[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/items/consumables/gear/gear_effect_5.tres" type="Resource" id=8]
-[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/items/consumables/gear/gear_effect_4.tres" type="Resource" id=9]
-[ext_resource path="res://mods-unpacked/KANA-TrainConductor/content/items/consumables/gear/gear_effect_2.tres" type="Resource" id=10]
-[ext_resource path="res://mods-unpacked/KANA-BFX/data_definitions/KANABFXConsumabeData.gd" type="Script" id=11]
+[ext_resource path="res://mods-unpacked/KANA-Pototo/KANA-TrainConductor/content/items/consumables/gear/gear_effect_4.tres" type="Resource" id=1]
+[ext_resource path="res://mods-unpacked/KANA-Pototo/KANA-TrainConductor/content/items/consumables/gear/gear_effect_3.tres" type="Resource" id=2]
+[ext_resource path="res://mods-unpacked/KANA-Pototo/KANA-TrainConductor/content/items/consumables/gear/gear_effect_1.tres" type="Resource" id=3]
+[ext_resource path="res://mods-unpacked/KANA-Pototo/KANA-TrainConductor/content/items/consumables/gear/gear_effect_5.tres" type="Resource" id=4]
+[ext_resource path="res://mods-unpacked/KANA-Pototo/KANA-TrainConductor/content/items/consumables/gear/gear_effect_2.tres" type="Resource" id=5]
+[ext_resource path="res://mods-unpacked/KANA-BFX/data_definitions/KANABFXConsumabeData.gd" type="Script" id=6]
+[ext_resource path="res://mods-unpacked/KANA-Pototo/KANA-TrainConductor/content/items/consumables/gear/kana_consumable_gear.tscn" type="PackedScene" id=7]
+[ext_resource path="res://mods-unpacked/KANA-Pototo/KANA-TrainConductor/content/items/consumables/gear/coin_bag_ring_gemstone_item_04.wav" type="AudioStream" id=8]
+[ext_resource path="res://mods-unpacked/KANA-Pototo/KANA-TrainConductor/content/items/consumables/gear/gear.png" type="Texture" id=9]
+[ext_resource path="res://mods-unpacked/KANA-Pototo/KANA-TrainConductor/content/items/consumables/gear/coin_bag_ring_gemstone_item_03.wav" type="AudioStream" id=10]
+[ext_resource path="res://mods-unpacked/KANA-Pototo/KANA-TrainConductor/content/items/consumables/gear/coin_bag_ring_gemstone_item_02.wav" type="AudioStream" id=11]
 
 [resource]
-script = ExtResource( 11 )
+script = ExtResource( 6 )
 my_id = "kana_consumable_gear"
 unlocked_by_default = true
-icon = ExtResource( 2 )
+icon = ExtResource( 9 )
 name = "KANA_CONSUMABLE_GEAR"
 tier = 1
 value = 1
-effects = [ ExtResource( 6 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ) ]
+effects = [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ) ]
 tracking_text = ""
 max_nb = -1
 item_appearances = [  ]
 tags = [  ]
 to_be_processed_at_end_of_wave = false
-pickup_sounds = [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 1 ) ]
-consumable_scene = ExtResource( 5 )
+pickup_sounds = [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 8 ) ]
+consumable_scene = ExtResource( 7 )

@@ -3,7 +3,7 @@ extends "res://main.gd"
 
 var KANA_log_name := "KANA-TrainConductor"
 
-onready var KANA_Train_Conductor = get_node("/root/ModLoader/KANA-TrainConductor")
+onready var KANA_pototo = get_node("/root/ModLoader/KANA-Pototo")
 
 func init_camera() -> void:
 	.init_camera()
@@ -28,7 +28,7 @@ func on_consumable_picked_up(consumable:Node) -> void:
 func KANA_handle_gear_collected() -> void:
 	var KANA_bfx := get_node("/root/ModLoader/KANA-BFX")
 
-	KANA_Train_Conductor.play_sfx()
+	KANA_pototo.play_sfx()
 	KANA_bfx.KANA_activate_walking_turret_boost(5)
 	# Increase the gears collected counter
 	RunData.tracked_item_effects["character_train_conductor"] += 1

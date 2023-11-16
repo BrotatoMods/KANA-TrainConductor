@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://mods-unpacked/KANA-TrainConductor/custom_resources/whistle.ogg" type="AudioStream" id=1]
+[ext_resource path="res://mods-unpacked/KANA-Pototo/KANA-TrainConductor/custom_resources/whistle.ogg" type="AudioStream" id=1]
 
 [node name="Node" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
