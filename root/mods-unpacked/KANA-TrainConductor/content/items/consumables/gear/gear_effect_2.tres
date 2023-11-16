@@ -6,12 +6,12 @@
 
 [resource]
 script = ExtResource( 3 )
-key = ""
+key = "kana_consumable_gear"
 text_key = ""
 value = 0
-custom_key = ""
-storage_method = 0
-effect_sign = 3
+custom_key = "kana_bfx_add_random_effect_on_consumable_collected"
+storage_method = 2
+effect_sign = 2
 custom_args = [  ]
 effects = [ ExtResource( 1 ), ExtResource( 2 ) ]
 probabilities = [ 0.85, 0.15 ]

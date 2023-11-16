@@ -16,6 +16,8 @@ onready var KANA_bfx := get_node("/root/ModLoader/KANA-BFX")
 
 
 func _init(modloader = ModLoader) -> void:
+	name = TRAIN_CONDUCTOR_MOD_DIR
+
 	ModLoaderLog.info("Init", TRAIN_CONDUCTOR_LOG_NAME)
 	mod_dir_path = ModLoaderMod.get_unpacked_dir().plus_file(TRAIN_CONDUCTOR_MOD_DIR)
 
