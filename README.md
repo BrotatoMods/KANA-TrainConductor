@@ -1,6 +1,6 @@
 <div align="center">
 
-  # 🚉 KANA-TrainConductor 🚉
+  # 🚊 KANA-TrainConductor 🚊
 
 <img alt="Train Conductor Description" src="https://github.com/BrotatoMods/KANA-TrainConductor/assets/41547570/d7c8567d-9930-4708-9907-df7809fedfba" />
 
