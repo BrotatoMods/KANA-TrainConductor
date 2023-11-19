@@ -70,6 +70,9 @@ script = ExtResource( 1 )
 material = ExtResource( 5 )
 texture = ExtResource( 3 )
 
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0.5, -2 )
+
 [node name="Indicator" type="Sprite" parent="." index="2"]
 modulate = Color( 1, 0.85098, 0.160784, 1 )
 scale = Vector2( 0.33, 0.33 )
