@@ -1,0 +1,5 @@
+keys,en,de
+CHARACTER_TRAIN_CONDUCTOR,Train Conductor,Lokführer
+KANA_CONSUMABLE_GEAR_COLLECTED_COUNT,Gears collected: {0},Zahnräder gesammelt: {0}
+KANA_CONSUMABLE_GEAR,Gear,Zahnrad
+KANA_TRAIN_CONDUCTOR_HAT,Train Conductor Hat,Lokführer Hut
